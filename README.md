@@ -99,18 +99,13 @@ streamlit run app.py
 
 ## 🧑‍💻 Author
 
-**Adarsh**
+**Adarsh Kumar Sahu**
 Solo Developer | B.Tech CSE | KIIT Bhubaneswar
 📧 Email: [22053745@kiit.ac.in](mailto:22053745@kiit.ac.in)
-🔗 LinkedIn: [linkedin.com/in/adarsh](https://linkedin.com/in/adarsh)
+🔗 LinkedIn: [linkedin.com/in/adarsh-kumar-sahu-638831293](https://www.linkedin.com/in/adarsh-kumar-sahu-638831293/)
 
 ---
 
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
 
 ## 🌐 Deployment (Optional)
 
