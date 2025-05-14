@@ -1,150 +1,131 @@
 # 🧠 AI Resume Analyzer & Career Recommendation System
 
-A Machine Learning-based web application that analyzes resumes, predicts the most suitable career field based on extracted skills, and recommends relevant online courses to improve employability.
-
----
-
-## 📌 Problem Statement
-
-Job seekers often struggle to identify which roles best suit their skills and what to improve. Our system solves this by automatically analyzing uploaded resumes, predicting a career path, and recommending skill-specific courses.
+The **AI Resume Analyzer** is a machine learning-based web application that helps users analyze their resumes and get career path recommendations based on extracted skills. It uses natural language processing (NLP) to parse resumes and predict a suitable career field, followed by YouTube course suggestions to help users upskill.
 
 ---
 
 ## 🚀 Features
 
-- 📤 Upload resumes in PDF/DOC/DOCX format  
-- 🧠 Extract skills using NLP (pyresparser, spaCy)  
-- 🤖 Predict career field using a Naive Bayes classifier  
-- 🎓 Recommend skills and curated YouTube courses  
-- 📊 Admin dashboard with user data and pie chart analytics  
-- 💾 MySQL database integration for storing results  
+- Upload and analyze resumes in PDF/DOC/DOCX format
+- Extract skills, education, and experience using NLP
+- Predict the most suitable career role using a trained ML model
+- Recommend YouTube courses based on the predicted role
+- Admin dashboard to view resume analytics and role distribution
+- Resume data stored in a SQL database for further analysis
 
 ---
 
-## 💡 Technologies Used
+## 🛠️ Tech Stack
 
-| Component        | Technology                                |
-|------------------|--------------------------------------------|
-| Frontend         | Streamlit                                 |
-| Backend          | Python                                     |
-| NLP              | pyresparser, spaCy, nltk, pdfminer, docx2txt |
-| Machine Learning | scikit-learn (Naive Bayes, TF-IDF Vectorizer) |
-| Database         | MySQL                                      |
-| Visualization    | Plotly, Streamlit Tags                     |
-| Admin Panel      | Streamlit, MySQL                           |
+- **Frontend:** Streamlit (Python UI framework)
+- **Backend:** Python, scikit-learn, spaCy, pyresparser, pdfminer.six, docx2txt
+- **Database:** MySQL
+- **Machine Learning:** Naive Bayes Classifier
+- **Others:** Pandas, Regex, Joblib
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
-├── app.py                      # Main Streamlit app
-├── model/
-│   ├── train_model.py         # ML training script
-│   ├── career_model.pkl       # Trained classifier
-│   ├── vectorizer.pkl         # TF-IDF vectorizer
-│   └── label_encoder.pkl      # Label encoder
-├── utils/
-│   ├── extract_skills.py      # Resume parsing logic
-│   └── Courses.py             # Course mapping logic
-├── database/
-│   ├── db_config.py           # MySQL connection file
-│   └── schema.sql             # DB schema
-├── admin/
-│   └── dashboard.py           # Admin dashboard
-├── data/
-│   └── large_resume_data.csv  # Training dataset
-├── README.md
-├── requirements.txt
-```
+
+├── train\_model.py              # Trains and saves the ML model
+├── app.py                      # Main Streamlit frontend file
+├── Courses.py                  # Maps roles to YouTube course recommendations
+├── resume\_parser.py            # Handles resume parsing logic
+├── utils/                      # Utility scripts and config files
+├── database.sql                # MySQL schema for storing parsed data
+├── large\_resume\_data.csv       # Dataset used for ML training
+├── models/                     # Contains saved ML model and encoders
+└── README.md
+
+````
+
+---
+
+## 🧠 How It Works
+
+1. User uploads a resume file via the Streamlit interface.
+2. Resume content is extracted using `pyresparser`, `pdfminer`, or `docx2txt`.
+3. Parsed skills are vectorized and passed to the trained ML model.
+4. The model predicts a role (e.g., Data Scientist, Web Developer).
+5. Recommended YouTube courses for the role are displayed to the user.
+6. All data is stored in a MySQL database for admin analytics.
+
+---
+
+## 🧪 Machine Learning Model
+
+- Dataset: `large_resume_data.csv` (skills and target roles)
+- Algorithm: Naive Bayes (Multinomial)
+- Libraries: scikit-learn, joblib
+- Preprocessing: CountVectorizer, LabelEncoder
+
+---
+
+## 🖼️ Sample Screenshots
+
+*To be added after deployment or local run screenshots.*
+
+---
+
+## 📊 Admin Panel Features
+
+- View all uploaded resumes and predicted roles
+- Visualize role distribution with pie charts
+- Export data if needed for further HR analysis
 
 ---
 
 ## ⚙️ Installation
 
-1. **Clone the repository**  
 ```bash
-git clone https://github.com/your-username/resume-analyzer.git
-cd resume-analyzer
-```
-
-2. **Install dependencies**  
-```bash
+git clone https://github.com/your-username/ai-resume-analyzer.git
+cd ai-resume-analyzer
 pip install -r requirements.txt
-```
-
-3. **Set up MySQL database**  
-- Create a database (e.g., `resumeDB`)
-- Run `schema.sql` to create tables
-- Update `db_config.py` with your DB credentials
-
-4. **Run the application**  
-```bash
 streamlit run app.py
-```
+````
+
+> Make sure MySQL is running and properly connected. Update DB credentials in the code if needed.
 
 ---
 
-## 📊 Dataset
+## 📁 Dataset
 
-- `large_resume_data.csv`  
-- Columns:  
-  - `skills` – extracted skill keywords  
-  - `predicted_role` – target job role for training  
+* The dataset `large_resume_data.csv` contains skill-role pairs.
+* You can expand it for better model accuracy.
 
 ---
 
-## 🔐 Admin Panel
+## 🧑‍💻 Author
 
-Admin can:
-- View analyzed resume data
-- See pie charts for predicted roles and experience levels
-- Export data if needed
-
-> Admin credentials can be modified in `dashboard.py`.
+**Adarsh**
+Solo Developer | B.Tech CSE | KIIT Bhubaneswar
+📧 Email: [22053745@kiit.ac.in](mailto:22053745@kiit.ac.in)
+🔗 LinkedIn: [linkedin.com/in/adarsh](https://linkedin.com/in/adarsh)
 
 ---
 
-## ✅ Results
+## 📜 License
 
-- Skill extraction success rate: ~85% for structured resumes  
-- Career field prediction accuracy: ~89% (Naive Bayes classifier)  
-- Average processing time per resume: <10 seconds  
+This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 👨‍💻 Team Contributions
+## 🌐 Deployment (Optional)
 
-| Member | Contribution |
-|--------|-------------|
-| Member 1 | Resume Parsing & NLP |
-| Member 2 | ML Model Training & Evaluation |
-| Member 3 | Streamlit Frontend Design |
-| Member 4 | Backend Integration & MySQL |
-| Member 5 | Admin Panel & Visual Analytics |
-| Member 6 | Course Recommendation & Testing |
+Currently runs locally via Streamlit. Can be deployed on:
+
+* [Streamlit Cloud](https://streamlit.io/cloud)
+* Render.com
+* Vercel (for frontend) + Flask backend
 
 ---
 
-## 🔮 Future Improvements
+## 🙌 Acknowledgments
 
-- Use BERT or other advanced NLP models  
-- Real-time course integration (e.g., Coursera, Udemy API)  
-- Upload multiple resumes at once  
-- Add job matching feature using live job APIs  
+* [pyresparser](https://github.com/OmkarPathak/pyresparser)
+* [spaCy](https://spacy.io/)
+* [scikit-learn](https://scikit-learn.org/)
 
----
-
-## 📃 License
-
-This project is licensed under the MIT License.
-
----
-
-## 🙏 Acknowledgements
-
-- Apna College (for guidance & inspiration)  
-- Pyresparser for resume parsing  
-- Streamlit for UI  
-- scikit-learn for ML  
 ```
