@@ -4,6 +4,12 @@ The **AI Resume Analyzer** is a machine learning-based web application that help
 
 ---
 
+## 📽️ Project Demo Videos
+
+🎬 Watch the full project demonstration (Admin + User Panel):  
+[🔗 Click here to view on Google Drive](https://drive.google.com/drive/folders/1OC9LZl9O3Da5bEktC8NSHyu-irlFp3p_?usp=sharing)
+
+
 ## 🚀 Features
 
 - Upload and analyze resumes in PDF/DOC/DOCX format
